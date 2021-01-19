@@ -148,7 +148,7 @@ export const useGetDrink = (filters, name) => {
 }
 
 export const useGetByID = (id) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState({})
   const [loading, setLoading] = useState(true)
   const cache = useRef({})
 
@@ -160,13 +160,14 @@ export const useGetByID = (id) => {
             setData(cache.current[id])
           } else {
             let url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-            let res = await extractJSON(url)
-            setData(res)
+            let res = await fetch(url)
+            let jRes = await res.json()
+            setData(jRes["drinks"][0])
             setLoading(false)
           }   
         } 
       } catch (error) {
-        setData([])
+        setData({})
         setLoading(true)
       }
     } 

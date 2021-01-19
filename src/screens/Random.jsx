@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Loading from '../../components/loading/Loading'
-import { useGetRandom } from '../../services/customHooks'
-import { 
-  Drink, DrinkImage, DrinkName, 
-  DrinkIngredients, IngredientTab, DrinkData, 
-  DrinkRecipe, Measure, Instructions,
-  InstructionTitle, RecipeTitle
-} from './RandomElements'
+import Loading from '../components/Loading'
+import { useGetRandom } from '../services/customHooks'
+import * as Drink from '../components/styled/Details'
 
 function Random() {
   const [data, loading] = useGetRandom()
@@ -34,27 +29,29 @@ function Random() {
   if (loading) return <Loading />
 
   return (
-    <Drink>
-      <DrinkImage src={ strDrinkThumb } alt={ strDrink } />
-      <DrinkData>
-        <DrinkName>{ strDrink }</DrinkName>
-        <DrinkRecipe>
-          <RecipeTitle>Recipe</RecipeTitle>
+    <Drink.Container>
+      <Drink.ImageContainer>
+        <Drink.Image src={ strDrinkThumb } alt={ strDrink } />
+      </Drink.ImageContainer>
+      <Drink.Data>
+        <Drink.Name>{ strDrink }</Drink.Name>
+        <Drink.Recipe>
+          <Drink.RecipeTitle>Recipe</Drink.RecipeTitle>
           { recipe.map((measure, index) => 
-            <Measure> { ingredients[index] } - { measure }</Measure>
+            <Drink.Measure> { ingredients[index] } - { measure }</Drink.Measure>
           ) }
-        <Instructions>
-          <InstructionTitle>Instructions</InstructionTitle>
+        <Drink.Instructions>
+          <Drink.InstructionTitle>Instructions</Drink.InstructionTitle>
           { strInstructions }
-        </Instructions>
-        </DrinkRecipe>
-        <DrinkIngredients>
+        </Drink.Instructions>
+        </Drink.Recipe>
+        <Drink.Ingredients>
           { ingredients.map((ingredient) => 
-            <IngredientTab key={ ingredient }>{ ingredient }</IngredientTab>  
+            <Drink.IngredientTab key={ ingredient }>{ ingredient }</Drink.IngredientTab>  
           ) }
-        </DrinkIngredients>
-      </DrinkData>
-    </Drink>
+        </Drink.Ingredients>
+      </Drink.Data>
+    </Drink.Container>
   )
 }
 

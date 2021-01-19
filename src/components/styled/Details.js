@@ -1,37 +1,50 @@
 import styled from 'styled-components'
 
-export const Drink = styled.div`
+export const Container = styled.div`
   display: flex;
   height: 100%;
   margin: 2rem;
+  color: white;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 `
-export const DrinkData = styled.div`
+export const Data = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-  justify-content: space-evenly;
-`
-
-export const DrinkImage = styled.img`
-  height: 70vh;
-  margin-right: 1rem;
+  margin: 0 0 0 1rem;
+  justify-content: space-between;
 
   @media screen and (max-width: 768px) {
-    height: 40vh;
+    margin: 1rem 0 0 1rem;
   }
 `
 
-export const DrinkName = styled.div`
+export const ImageContainer = styled.div`
+  height: 70vh;
+  margin-right: 1rem;
+  border: 1px solid white;
+
+  @media screen and (max-width: 768px) {
+    height: 40vh;
+    margin: 0 auto 0 auto;
+  }
+`
+
+export const Image = styled.img`
+  max-height: 90%;
+  margin: 1rem;
+`
+
+export const Name = styled.div`
   font-size: 1.5rem;
   margin-left: -1rem;
   font-weight: 600;
+  color: white;
 `
 
-export const DrinkRecipe = styled.ul`
+export const Recipe = styled.ul`
   list-style: none;
 `
 
@@ -53,17 +66,17 @@ export const InstructionTitle = styled.div`
   font-weight: 600;
 `
 
-export const DrinkIngredients = styled.div`
+export const Ingredients = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
 
 export const IngredientTab = styled.div`
   display: inline;
-  background-color: green;
+  background-color: white;
   padding: 0.1rem 0.5rem;
   text-align: center;
-  color: white;
+  color: #7d0690;
   font-weight: 600;
   border-radius: 0.1rem;
   margin: 0.5rem;
