@@ -1,28 +1,40 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion';
 
-export const Card = styled(motion.div)`
-  display: block;
-  border: 0.5px solid white;
-  margin: 1rem;
-  align-items: center;
-  justifyContent: space-evenly;
+export const Card = styled.div`
+  display: flex;
+  position: relative;
   width: 200px;
-  height: 250px;
-  box-shadow: 0 0 5px white;
-  cursor: pointer;
-  border-radius: 0.1rem;
+  height: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1rem;
+  box-shadow: 0 0 8px white;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
+  }
 `
 
 export const Image = styled.img`
-  width: 100%;
-  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 `
 
 export const Title = styled.div`
-  padding: 0.5rem 0 0 0;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.4rem;
+  padding: 0.1rem 0.2rem;
+  max-width: 140px;
+  background-color: rgba(125,6,144,1);
+  z-index: 10;
   font-size: 1rem;
-  text-align: center;
+  font-weight: 500;
   text-overflow: ellipsis;
-  font-weight: 700;
+  white-space: nowrap;
+  color: white;
+  overflow: hidden;
 `

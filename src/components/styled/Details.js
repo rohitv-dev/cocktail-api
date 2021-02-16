@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   display: flex;
   height: 100%;
   margin: 2rem;
@@ -10,7 +11,7 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `
-export const Data = styled.div`
+export const Data = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin: 0 0 0 1rem;
@@ -21,7 +22,7 @@ export const Data = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(motion.div)`
   height: 70vh;
   margin-right: 1rem;
   border: 1px solid white;
@@ -71,7 +72,7 @@ export const Ingredients = styled.div`
   flex-wrap: wrap;
 `
 
-export const IngredientTab = styled.div`
+export const IngredientTab = styled(motion.div)`
   display: inline;
   background-color: white;
   padding: 0.1rem 0.5rem;

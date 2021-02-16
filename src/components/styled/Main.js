@@ -8,5 +8,8 @@ export const Input = styled.input`
 export const CardContainer = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
 `

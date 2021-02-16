@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Nav from './styled/Nav'
 
-function Navbar() {
+function Navbar({ open, setOpen }) {
   return (
       <Nav.Container
         initial={{ y: -300 }}
@@ -15,6 +15,11 @@ function Navbar() {
           </Nav.Link>
           <Nav.Link exact to="/random" activeClassName="active">
             <Nav.Item whileHover={{ scale: 1.1, originX: 0 }} >Random</Nav.Item>
+          </Nav.Link>
+          <Nav.Link exact to="/" activeClassName="active" onClick={() => {
+            setOpen(!open)
+          }}>
+            <Nav.Item whileHover={{ scale: 1.1, originX: 0 }} >Filter</Nav.Item>
           </Nav.Link>
         </Nav.Menu>
       </Nav.Container> 

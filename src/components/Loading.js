@@ -19,7 +19,7 @@ const LoadingContainer = styled.div`
 const LoadingCircle = styled.div`
   height: 100px;
   width: 100px;
-  border: 5px solid black;
+  border: 5px solid white;
   border-radius: 50%;
   animation-name: ${loadingAnimation};
   animation-duration: 8s;
